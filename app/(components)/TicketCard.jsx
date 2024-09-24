@@ -7,9 +7,9 @@ const TicketCard = () => {
   return (
     <div className="flex flex-col bg-card hover:bg-card-hover rounded-md shadow-lg m-2 p-3">
       <div className="flex mb-3">
-        <DeleteBlock />
+        <PriorityDisplay />
         <div className="ml-auto">
-          <PriorityDisplay />
+          <DeleteBlock />
         </div>
       </div>
       <h4>Ticket Title</h4>
@@ -18,8 +18,16 @@ const TicketCard = () => {
         This is tickect description! please do this ticket
       </p>
 
-      <ProgressDisplay />
-      <StatusDisplay />
+      <div className="flex-grow"> </div>
+      <div className="flex mt-2">
+        <div className="flex flex-col">
+          <p className="text-xs my-1"> 24/09/24 02:15PM </p>
+          <ProgressDisplay />
+        </div>
+        <div className="ml-auto flex items-end">
+          <StatusDisplay />
+        </div>
+      </div>
     </div>
   );
 };
