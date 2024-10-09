@@ -3,7 +3,7 @@ import mongoose, { Schema } from "mongoose";
 mongoose.connect(process.env.MONGODB_URI);
 mongoose.Promise = global.Promise;
 
-const tickectSchema = new Schema(
+const ticketSchema = new Schema(
   {
     title: String,
     description: String,
@@ -18,6 +18,5 @@ const tickectSchema = new Schema(
   }
 );
 
-const Ticket =
-  mongoose.models.Ticket || mongoose.model("Ticket", tickectSchema);
+const Ticket = mongoose.models.Ticket || mongoose.model("Ticket", ticketSchema);
 export default Ticket;
